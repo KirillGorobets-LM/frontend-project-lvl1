@@ -7,11 +7,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
-      name: 'setup node'
+        name: 'setup node'
       with:
         node-version: '13.x'
-      # Install and build project
-    - name: npm install, build
-    run: make install
+    - name: 'npm install, build'
+        run: make install
     - name: 'esLint'
         run: make lint
