@@ -11,6 +11,6 @@ jobs:
       with:
         node-version: '13.x'
     - name: 'npm install, build'
-        run: make install
+          run: make install
     - name: 'esLint'
         run: make lint
