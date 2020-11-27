@@ -1,4 +1,4 @@
-name: 'es'
+name: 'esLint'
 on:
   push:
 jobs:
