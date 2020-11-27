@@ -12,6 +12,6 @@ jobs:
         node-version: '13.x'
       # Install and build project
     - name: npm install, build
-        run: make install
+    run: make install
     - name: 'esLint'
         run: make lint
