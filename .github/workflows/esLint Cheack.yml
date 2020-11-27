@@ -1,4 +1,4 @@
-name: 'test my project'
+name: 'esLint'
 on:
   push:
   pull-request:
