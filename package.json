@@ -17,7 +17,7 @@
     "brain-calc": "bin/brain-calc.js",
     "brain-gcd": "bin/brain-gcd.js"
   },
-  "author": "",
+  "author": "Kirill Gorobets",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/KirillGorobets-LM/frontend-project-lvl1/issues"
