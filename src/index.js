@@ -9,7 +9,7 @@ export const gameEngine = (question, correctAnswer, nameOfUser) => {
       console.log('Correct!');
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer(a)}'`);
-      console.log(`Let\`s try again ${nameOfUser}!`);
+      console.log(`Let\`s try again, ${nameOfUser}!`);
       process.exit();
     }
   }
