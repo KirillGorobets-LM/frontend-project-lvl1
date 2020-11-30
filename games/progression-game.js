@@ -11,11 +11,11 @@ export const question = () => {
     array.push(array[i] + step);
   }
   array[getRandomPlace()] = '..';
-  return `${array}`;
+  return array.join(' ');
 };
 
 export const correctAnswer = (str) => {
-  const arr = str.split(',');
+  const arr = str.split(' ');
   const place = arr.indexOf('..');
   let step = 0;
   let result = 0;
