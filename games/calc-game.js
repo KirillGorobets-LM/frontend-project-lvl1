@@ -1,5 +1,5 @@
-import { greeting } from '../src/cli.js';
-import { gameEngine } from '../src/index.js';
+import greeting from '../src/cli.js';
+import gameEngine from '../src/index.js';
 
 const calcGame = () => {
   const userName = greeting();

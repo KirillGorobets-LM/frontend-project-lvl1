@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export const gameEngine = (getQuestionAndCorrectAnswer, userName) => {
+const gameEngine = (getQuestionAndCorrectAnswer, userName) => {
   const countOfRounds = 3;
   for (let i = 0; i < countOfRounds; i += 1) {
     const ca = getQuestionAndCorrectAnswer();
