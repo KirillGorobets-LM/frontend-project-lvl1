@@ -1,26 +1,28 @@
-export const rules = () => console.log('What is the result of the expression?');
-const operators = ['+', '-', '*'];
-const getRandomNum = () => Math.floor(Math.random() * (100 - 10)) + 10;
-const getRandomOperator = () => operators[Math.floor(Math.random() * operators.length)];
+import { greeting } from '../src/cli.js';
+import { gameEngine } from '../src/index.js';
 
-export const question = () => {
-  const a = getRandomNum();
-  const b = getRandomNum();
-  const op = getRandomOperator();
-  return `${a} ${op} ${b}`;
+const calcGame = () => {
+  const userName = greeting();
+  console.log('What is the result of the expression?');
+  const operators = ['+', '-', '*'];
+  const getRandomNum = () => Math.floor(Math.random() * (100 - 10)) + 10;
+  const getRandomOperator = () => operators[Math.floor(Math.random() * operators.length)];
+  // eslint-disable-next-line consistent-return
+  const getQuestionAndCorrectAnswer = () => {
+    const a = getRandomNum();
+    const b = getRandomNum();
+    const op = getRandomOperator();
+    console.log(`Question: ${a} ${op} ${b}`);
+    if (op === '+') {
+      return String(a + b);
+    }
+    if (op === '-') {
+      return String(a - b);
+    }
+    if (op === '*') {
+      return String(a * b);
+    }
+  };
+  gameEngine(getQuestionAndCorrectAnswer, userName);
 };
-// eslint-disable-next-line consistent-return
-export const correctAnswer = (str) => {
-  const array = str.split(' ');
-  if (array[1] === '+') {
-    return String(Number(array[0]) + Number(array[2]));
-  }
-  if (array[1] === '-') {
-    return String(array[0] - array[2]);
-  }
-  if (array[1] === '*') {
-    return String(array[0] * array[2]);
-  }
-};
-
-export default rules;
+export default calcGame;
