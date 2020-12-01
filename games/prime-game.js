@@ -1,18 +1,20 @@
-export const rules = () => console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-const getRandomNum = () => Math.floor(Math.random() * (200 - 0));
+import { greeting } from '../src/cli.js';
+import { gameEngine } from '../src/index.js';
 
-export const question = () => {
-  const number = getRandomNum();
-  return `${number}`;
-};
-
-export const correctAnswer = (str) => {
-  const num = Number(str);
-  for (let i = 2; i < num; i += 1) {
-    if (num % i === 0) {
-      return 'no';
+const primeGame = () => {
+  const userName = greeting();
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  const getRandomNum = () => Math.floor(Math.random() * (200 - 0));
+  const getQuestionAndCorrectAnswer = () => {
+    const a = getRandomNum();
+    console.log(`Question: ${a}`);
+    for (let i = 2; i < a; i += 1) {
+      if (a % i === 0) {
+        return 'no';
+      }
     }
-  }
-  return 'yes';
+    return 'yes';
+  };
+  gameEngine(getQuestionAndCorrectAnswer, userName);
 };
-export default rules;
+export default primeGame;
