@@ -1,19 +1,19 @@
 import readlineSync from 'readline-sync';
 
-export const gameEngine = (question, correctAnswer, nameOfUser) => {
-  for (let i = 0; i < 3; i += 1) {
-    const a = question();
-    console.log(`Question: ${a}`);
+export const gameEngine = (getQuestionAndCorrectAnswer, userName) => {
+  const countOfRounds = 3;
+  for (let i = 0; i < countOfRounds; i += 1) {
+    const ca = getQuestionAndCorrectAnswer();
     const answer = readlineSync.question('Your answer:');
-    if (correctAnswer(a) === answer) {
+    if (ca === answer) {
       console.log('Correct!');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer(a)}'`);
-      console.log(`Let's try again, ${nameOfUser}!`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${ca}'`);
+      console.log(`Let's try again, ${userName}!`);
       process.exit();
     }
   }
-  console.log(`Congratulations, ${nameOfUser}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default gameEngine;
