@@ -7,22 +7,25 @@ const calcGame = () => {
   const operators = ['+', '-', '*'];
   const getRandomNum = () => Math.floor(Math.random() * (100 - 10)) + 10;
   const getRandomOperator = () => operators[Math.floor(Math.random() * operators.length)];
-  // eslint-disable-next-line consistent-return
-  const getQuestionAndCorrectAnswer = () => {
+  const getGameObject = () => {
     const a = getRandomNum();
     const b = getRandomNum();
     const op = getRandomOperator();
-    console.log(`Question: ${a} ${op} ${b}`);
+    const question = `${a} ${op} ${b}`;
+    let correctAnswer = '';
+    let game = {};
     if (op === '+') {
-      return String(a + b);
+      correctAnswer = (a + b).toString();
     }
     if (op === '-') {
-      return String(a - b);
+      correctAnswer = (a - b).toString();
     }
     if (op === '*') {
-      return String(a * b);
+      correctAnswer = (a * b).toString();
     }
+    game = { question, correctAnswer };
+    return game;
   };
-  gameEngine(getQuestionAndCorrectAnswer, userName);
+  gameEngine(getGameObject, userName);
 };
 export default calcGame;
