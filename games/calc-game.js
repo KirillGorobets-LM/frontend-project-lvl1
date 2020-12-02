@@ -10,20 +10,19 @@ const calcGame = () => {
   const getGameObject = () => {
     const a = getRandomNum();
     const b = getRandomNum();
-    const op = getRandomOperator();
-    const question = `${a} ${op} ${b}`;
+    const operator = getRandomOperator();
+    const question = `${a} ${operator} ${b}`;
     let correctAnswer = '';
-    let game = {};
-    if (op === '+') {
+    if (operator === '+') {
       correctAnswer = (a + b).toString();
     }
-    if (op === '-') {
+    if (operator === '-') {
       correctAnswer = (a - b).toString();
     }
-    if (op === '*') {
+    if (operator === '*') {
       correctAnswer = (a * b).toString();
     }
-    game = { question, correctAnswer };
+    const game = { question, correctAnswer };
     return game;
   };
   gameEngine(getGameObject, userName);

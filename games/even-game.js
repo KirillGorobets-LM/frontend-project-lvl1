@@ -7,7 +7,6 @@ const evenGame = () => {
   const getGameObject = () => {
     const question = Math.floor(Math.random() * (100 - 10)) + 10;
     let correctAnswer = '';
-    let game = {};
     const isEven = (num) => {
       if (num % 2 === 0) {
         return true;
@@ -19,7 +18,7 @@ const evenGame = () => {
     } else {
       correctAnswer = 'no';
     }
-    game = { question, correctAnswer };
+    const game = { question, correctAnswer };
     return game;
   };
   gameEngine(getGameObject, userName);
