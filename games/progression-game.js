@@ -1,18 +1,16 @@
 import greeting from '../src/cli.js';
 import gameEngine from '../src/index.js';
+import getRandomNumFromRange from '../src/utils.js';
 
 const progressionGame = () => {
   const userName = greeting();
   console.log('What number is missing in the progression?');
-  const getRandomPlace = () => Math.floor(Math.random() * (10 - 0));
-  const getRandomStep = () => Math.floor(Math.random() * (20 - 1));
-  const getRandomNum = () => Math.floor(Math.random() * (100 - 0));
   const getGameObject = () => {
-    const startNum = getRandomNum();
+    const startNum = getRandomNumFromRange(0, 100);
     const array = [];
     const countOfNumbers = 10;
-    const step = getRandomStep();
-    const place = getRandomPlace();
+    const step = getRandomNumFromRange(1, 20);
+    const place = getRandomNumFromRange(0, 10);
     for (let i = 0; i < countOfNumbers; i += 1) {
       array.push(startNum + step * i);
     }

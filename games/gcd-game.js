@@ -1,13 +1,13 @@
 import greeting from '../src/cli.js';
 import gameEngine from '../src/index.js';
+import getRandomNumFromRange from '../src/utils.js';
 
 const gcdGame = () => {
   const userName = greeting();
   console.log('Find the greatest common divisor of given numbers.');
-  const getRandomNum = () => Math.floor(Math.random() * (100 - 10)) + 10;
   const getGameObject = () => {
-    const a = getRandomNum();
-    const b = getRandomNum();
+    const a = getRandomNumFromRange(10, 100);
+    const b = getRandomNumFromRange(10, 100);
     const question = `${a} ${b}`;
     let correctAnswer = '';
     const bigNum = Math.max(a, b);

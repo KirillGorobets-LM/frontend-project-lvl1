@@ -1,15 +1,15 @@
 import greeting from '../src/cli.js';
 import gameEngine from '../src/index.js';
+import getRandomNumFromRange from '../src/utils.js';
 
 const calcGame = () => {
   const userName = greeting();
   console.log('What is the result of the expression?');
   const operators = ['+', '-', '*'];
-  const getRandomNum = () => Math.floor(Math.random() * (100 - 10)) + 10;
   const getRandomOperator = () => operators[Math.floor(Math.random() * operators.length)];
   const getGameObject = () => {
-    const a = getRandomNum();
-    const b = getRandomNum();
+    const a = getRandomNumFromRange(10, 100);
+    const b = getRandomNumFromRange(10, 100);
     const operator = getRandomOperator();
     const question = `${a} ${operator} ${b}`;
     let correctAnswer = '';

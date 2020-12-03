@@ -1,14 +1,14 @@
 import greeting from '../src/cli.js';
 import gameEngine from '../src/index.js';
+import getRandomNumFromRange from '../src/utils.js';
 
 const primeGame = () => {
   const userName = greeting();
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  const getRandomNum = () => Math.floor(Math.random() * (200 - 0));
   const getGameObject = () => {
-    const question = getRandomNum();
+    const question = getRandomNumFromRange(0, 200);
     let correctAnswer = '';
-    for (let i = 2; i < Math.sqrt(question); i += 1) {
+    for (let i = 2; i <= Math.sqrt(question); i += 1) {
       if (question % i === 0) {
         correctAnswer = 'no';
         break;

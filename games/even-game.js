@@ -1,11 +1,12 @@
 import greeting from '../src/cli.js';
 import gameEngine from '../src/index.js';
+import getRundomNumFromRange from '../src/utils.js';
 
 const evenGame = () => {
   const userName = greeting();
   console.log('Answer \'yes\' if the number is even, otherwise answer \'no\'.');
   const getGameObject = () => {
-    const question = Math.floor(Math.random() * (100 - 10)) + 10;
+    const question = getRundomNumFromRange(10, 100);
     let correctAnswer = '';
     const isEven = (num) => {
       if (num % 2 === 0) {
