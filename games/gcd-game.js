@@ -5,23 +5,21 @@ const gcdGame = () => {
   const userName = greeting();
   console.log('Find the greatest common divisor of given numbers.');
   const getRandomNum = () => Math.floor(Math.random() * (100 - 10)) + 10;
-  // eslint-disable-next-line consistent-return
-  const getQuestionAndCorrectAnser = () => {
+  const getGameObject = () => {
     const a = getRandomNum();
     const b = getRandomNum();
-    console.log(`Question: ${a} ${b}`);
-    let bigNum = 0;
-    if (a >= b) {
-      bigNum = a;
-    } else {
-      bigNum = b;
-    }
+    const question = `${a} ${b}`;
+    let correctAnswer = '';
+    const bigNum = Math.max(a, b);
     for (let i = bigNum; i >= 0; i -= 1) {
       if (a % i === 0 && b % i === 0) {
-        return `${i}`;
+        correctAnswer = i.toString();
+        break;
       }
     }
+    const game = { question, correctAnswer };
+    return game;
   };
-  gameEngine(getQuestionAndCorrectAnser, userName);
+  gameEngine(getGameObject, userName);
 };
 export default gcdGame;
