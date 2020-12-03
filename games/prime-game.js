@@ -5,16 +5,19 @@ const primeGame = () => {
   const userName = greeting();
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   const getRandomNum = () => Math.floor(Math.random() * (200 - 0));
-  const getQuestionAndCorrectAnswer = () => {
-    const a = getRandomNum();
-    console.log(`Question: ${a}`);
-    for (let i = 2; i < a; i += 1) {
-      if (a % i === 0) {
-        return 'no';
+  const getGameObject = () => {
+    const question = getRandomNum();
+    let correctAnswer = '';
+    for (let i = 2; i < Math.sqrt(question); i += 1) {
+      if (question % i === 0) {
+        correctAnswer = 'no';
+        break;
       }
+      correctAnswer = 'yes';
     }
-    return 'yes';
+    const game = { question, correctAnswer };
+    return game;
   };
-  gameEngine(getQuestionAndCorrectAnswer, userName);
+  gameEngine(getGameObject, userName);
 };
 export default primeGame;
