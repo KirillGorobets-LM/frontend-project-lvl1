@@ -4,7 +4,9 @@ const gameEngine = (getGameObject, userName) => {
   const countOfRounds = 3;
   for (let i = 0; i < countOfRounds; i += 1) {
     const { question, correctAnswer } = getGameObject();
+
     console.log(`Question: ${question}`);
+
     const answer = readlineSync.question('Your answer:');
     if (correctAnswer === answer) {
       console.log('Correct!');
