@@ -8,12 +8,18 @@ const primeGame = () => {
   const getGameObject = () => {
     const question = getRandomNumFromRange(0, 200);
     let correctAnswer = '';
-    for (let i = 2; i <= Math.sqrt(question); i += 1) {
-      if (question % i === 0) {
-        correctAnswer = 'no';
-        break;
+    const isPrime = (num) => {
+      for (let i = 2; i <= Math.sqrt(num); i += 1) {
+        if (question % i === 0) {
+          return false;
+        }
       }
+      return true;
+    };
+    if (isPrime(question)) {
       correctAnswer = 'yes';
+    } else {
+      correctAnswer = 'no';
     }
     const game = { question, correctAnswer };
     return game;
