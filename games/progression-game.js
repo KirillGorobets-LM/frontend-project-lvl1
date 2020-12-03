@@ -4,7 +4,7 @@ import gameEngine from '../src/index.js';
 const progressionGame = () => {
   const userName = greeting();
   console.log('What number is missing in the progression?');
-  const getRandomPlace = () => Math.floor(Math.random() * (11 - 0));
+  const getRandomPlace = () => Math.floor(Math.random() * (10 - 0));
   const getRandomStep = () => Math.floor(Math.random() * (20 - 1));
   const getRandomNum = () => Math.floor(Math.random() * (100 - 0));
   const getGameObject = () => {
