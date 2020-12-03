@@ -7,25 +7,21 @@ const progressionGame = () => {
   const getRandomPlace = () => Math.floor(Math.random() * (11 - 0));
   const getRandomStep = () => Math.floor(Math.random() * (20 - 1));
   const getRandomNum = () => Math.floor(Math.random() * (100 - 0));
-  const getQuestionAndCorrectAnswer = () => {
+  const getGameObject = () => {
     const startNum = getRandomNum();
-    const array = [startNum];
+    const array = [];
     const countOfNumbers = 10;
     const step = getRandomStep();
-    for (let i = 0; i < countOfNumbers - 1; i += 1) {
-      array.push(array[i] + step);
+    const place = getRandomPlace();
+    for (let i = 0; i < countOfNumbers; i += 1) {
+      array.push(startNum + step * i);
     }
-    array[getRandomPlace()] = '..';
-    console.log(`Question: ${array.join(' ')}`);
-    const place = array.indexOf('..');
-    let result = 0;
-    if (place > 5) {
-      result = Number(array[place - 1]) + step;
-    } else {
-      result = Number(array[place + 1]) - step;
-    }
-    return `${result}`;
+    const correctAnswer = (array[place]).toString();
+    array[place] = '..';
+    const question = `${array.join(' ')}`;
+    const game = { question, correctAnswer };
+    return game;
   };
-  gameEngine(getQuestionAndCorrectAnswer, userName);
+  gameEngine(getGameObject, userName);
 };
 export default progressionGame;
