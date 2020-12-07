@@ -8,7 +8,7 @@ const getGameObject = () => {
   const array = [];
   const countOfNumbers = 10;
   const step = getRandomNumFromRange(1, 20);
-  const place = getRandomNumFromRange(0, countOfNumbers);
+  const place = getRandomNumFromRange(0, countOfNumbers) - 1;
 
   for (let i = 0; i < countOfNumbers; i += 1) {
     array.push(startNum + step * i);
