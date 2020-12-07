@@ -1,30 +1,25 @@
-import greeting from '../src/cli.js';
 import gameEngine from '../src/index.js';
 import getRandomNumFromRange from '../src/utils.js';
 
-const evenGame = () => {
-  const userName = greeting();
-  console.log('Answer \'yes\' if the number is even, otherwise answer \'no\'.');
+const rules = 'Answer \'yes\' if the number is even, otherwise answer \'no\'.';
 
-  const getGameObject = () => {
-    const question = getRandomNumFromRange(10, 100);
-    let correctAnswer = '';
+const getGameObject = () => {
+  const number = getRandomNumFromRange(10, 100);
+  let correctAnswer = '';
 
-    const isEven = (num) => {
-      if (num % 2 === 0) {
-        return true;
-      }
-      return false;
-    };
-    if (isEven(question)) {
-      correctAnswer = 'yes';
-    } else {
-      correctAnswer = 'no';
+  const isEven = (num) => {
+    if (num % 2 === 0) {
+      return true;
     }
-    const game = { question, correctAnswer };
-    return game;
+    return false;
   };
-
-  gameEngine(getGameObject, userName);
+  if (isEven(number)) {
+    correctAnswer = 'yes';
+  } else {
+    correctAnswer = 'no';
+  }
+  const game = { question: number, correctAnswer, rules };
+  return game;
 };
-export default evenGame;
+
+export default () => gameEngine(getGameObject);
