@@ -4,7 +4,7 @@ import { getRandomNumFromRange } from '../utils.js';
 const rules = 'What is the result of the expression?';
 
 const operators = ['+', '-', '*'];
-const getRandomOperator = () => operators[getRandomNumFromRange(0, operators.length)];
+const getRandomOperator = () => operators[getRandomNumFromRange(0, (operators.length - 1))];
 const getGameObject = () => {
   const a = getRandomNumFromRange(10, 100);
   const b = getRandomNumFromRange(10, 100);
