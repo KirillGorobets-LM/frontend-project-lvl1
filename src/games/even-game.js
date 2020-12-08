@@ -1,7 +1,9 @@
 import gameEngine from '../index.js';
 import { getRandomNumFromRange } from '../utils.js';
 
-const rules = 'Answer \'yes\' if the number is even, otherwise answer \'no\'.';
+const evenCorrectAnswer = 'yes';
+const notEvenCorrectAnswer = 'no';
+const rules = `Answer "${evenCorrectAnswer}" if the number is even, otherwise answer "${notEvenCorrectAnswer}".`;
 
 const getGameObject = () => {
   const number = getRandomNumFromRange(10, 100);
@@ -14,9 +16,9 @@ const getGameObject = () => {
     return false;
   };
   if (isEven(number)) {
-    correctAnswer = 'yes';
+    correctAnswer = evenCorrectAnswer;
   } else {
-    correctAnswer = 'no';
+    correctAnswer = notEvenCorrectAnswer;
   }
   const game = { question: number, correctAnswer };
   return game;
