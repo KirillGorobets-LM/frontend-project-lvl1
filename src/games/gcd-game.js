@@ -1,5 +1,5 @@
-import gameEngine from '../src/index.js';
-import getRandomNumFromRange from '../src/utils.js';
+import gameEngine from '../index.js';
+import { getRandomNumFromRange } from '../utils.js';
 
 const rules = 'Find the greatest common divisor of given numbers.';
 
@@ -10,10 +10,11 @@ const getGameObject = () => {
 
   const findMaxCommonDivisor = (num1, num2) => {
     let result = 0;
-    const minNum = Math.min(num1, num2);
-    for (let i = 0; i <= minNum; i += 1) {
+    const minNum = Math.max(num1, num2);
+    for (let i = minNum; i >= 0; i -= 1) {
       if (a % i === 0 && b % i === 0) {
         result = i;
+        break;
       }
     }
     return result.toString();

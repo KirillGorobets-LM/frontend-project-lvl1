@@ -1,5 +1,5 @@
-import gameEngine from '../src/index.js';
-import getRandomNumFromRange from '../src/utils.js';
+import gameEngine from '../index.js';
+import { getRandomNumFromRange } from '../utils.js';
 
 const rules = 'What number is missing in the progression?';
 
@@ -8,7 +8,7 @@ const getGameObject = () => {
   const array = [];
   const countOfNumbers = 10;
   const step = getRandomNumFromRange(1, 20);
-  const place = getRandomNumFromRange(0, countOfNumbers) - 1;
+  const place = getRandomNumFromRange(0, (countOfNumbers - 1));
 
   for (let i = 0; i < countOfNumbers; i += 1) {
     array.push(startNum + step * i);

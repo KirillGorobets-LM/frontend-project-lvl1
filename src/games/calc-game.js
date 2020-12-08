@@ -1,10 +1,10 @@
-import gameEngine from '../src/index.js';
-import getRandomNumFromRange from '../src/utils.js';
+import gameEngine from '../index.js';
+import { getRandomNumFromRange } from '../utils.js';
 
 const rules = 'What is the result of the expression?';
 
 const operators = ['+', '-', '*'];
-const getRandomOperator = () => operators[Math.floor(Math.random() * operators.length)];
+const getRandomOperator = () => operators[getRandomNumFromRange(0, operators.length)];
 const getGameObject = () => {
   const a = getRandomNumFromRange(10, 100);
   const b = getRandomNumFromRange(10, 100);
