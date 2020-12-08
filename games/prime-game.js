@@ -21,8 +21,8 @@ const getGameObject = () => {
     correctAnswer = 'no';
   }
 
-  const game = { question: number, correctAnswer, rules };
+  const game = { question: number, correctAnswer };
   return game;
 };
 
-export default () => gameEngine(getGameObject);
+export default () => gameEngine(getGameObject, rules);

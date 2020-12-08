@@ -20,8 +20,8 @@ const getGameObject = () => {
   };
   const correctAnswer = findMaxCommonDivisor(a, b);
 
-  const game = { question, correctAnswer, rules };
+  const game = { question, correctAnswer };
   return game;
 };
 
-export default () => gameEngine(getGameObject);
+export default () => gameEngine(getGameObject, rules);

@@ -18,8 +18,8 @@ const getGameObject = () => {
   array[place] = '..';
   const question = array.join(' ');
 
-  const game = { question, correctAnswer, rules };
+  const game = { question, correctAnswer };
   return game;
 };
 
-export default () => gameEngine(getGameObject);
+export default () => gameEngine(getGameObject, rules);
