@@ -16,7 +16,7 @@ const gameEngine = (getGameObject, rules) => {
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
       console.log(`Let's try again, ${userName}!`);
-      process.exit();
+      return;
     }
   }
   console.log(`Congratulations, ${userName}!`);
