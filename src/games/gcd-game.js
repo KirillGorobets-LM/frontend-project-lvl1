@@ -1,7 +1,7 @@
 import gameEngine from '../index.js';
 import { getRandomNumFromRange } from '../utils.js';
 
-const rules = 'Find the greatest common divisor of given numbers.';
+const task = 'Find the greatest common divisor of given numbers.';
 
 const getGameObject = () => {
   const a = getRandomNumFromRange(10, 100);
@@ -25,4 +25,4 @@ const getGameObject = () => {
   return game;
 };
 
-export default () => gameEngine(getGameObject, rules);
+export default () => gameEngine(getGameObject, task);

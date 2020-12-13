@@ -1,7 +1,7 @@
 import gameEngine from '../index.js';
 import { getRandomNumFromRange } from '../utils.js';
 
-const rules = 'What number is missing in the progression?';
+const task = 'What number is missing in the progression?';
 
 const getGameObject = () => {
   const startNum = getRandomNumFromRange(0, 100);
@@ -22,4 +22,4 @@ const getGameObject = () => {
   return game;
 };
 
-export default () => gameEngine(getGameObject, rules);
+export default () => gameEngine(getGameObject, task);

@@ -3,7 +3,7 @@ import { getRandomNumFromRange } from '../utils.js';
 
 const evenCorrectAnswer = 'yes';
 const notEvenCorrectAnswer = 'no';
-const rules = `Answer "${evenCorrectAnswer}" if the number is even, otherwise answer "${notEvenCorrectAnswer}".`;
+const task = `Answer "${evenCorrectAnswer}" if the number is even, otherwise answer "${notEvenCorrectAnswer}".`;
 
 const getGameObject = () => {
   const number = getRandomNumFromRange(10, 100);
@@ -24,4 +24,4 @@ const getGameObject = () => {
   return game;
 };
 
-export default () => gameEngine(getGameObject, rules);
+export default () => gameEngine(getGameObject, task);

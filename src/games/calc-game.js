@@ -1,7 +1,7 @@
 import gameEngine from '../index.js';
 import { getRandomNumFromRange } from '../utils.js';
 
-const rules = 'What is the result of the expression?';
+const task = 'What is the result of the expression?';
 
 const operators = ['+', '-', '*'];
 const getRandomOperator = () => operators[getRandomNumFromRange(0, (operators.length - 1))];
@@ -26,4 +26,4 @@ const getGameObject = () => {
   return game;
 };
 
-export default () => gameEngine(getGameObject, rules);
+export default () => gameEngine(getGameObject, task);
