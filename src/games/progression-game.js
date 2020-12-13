@@ -2,24 +2,28 @@ import gameEngine from '../index.js';
 import { getRandomNumFromRange } from '../utils.js';
 
 const task = 'What number is missing in the progression?';
+const countOfNumbers = 10;
+
+const getProgression = (startNum, step, progressionLength) => {
+  const progression = [];
+  for (let i = 0; i < progressionLength; i += 1) {
+    progression.push(startNum + step * i);
+  }
+  return progression;
+};
 
 const getGameObject = () => {
   const startNum = getRandomNumFromRange(0, 100);
-  const array = [];
-  const countOfNumbers = 10;
   const step = getRandomNumFromRange(1, 20);
-  const place = getRandomNumFromRange(0, (countOfNumbers - 1));
+  const emptyIndex = getRandomNumFromRange(0, (countOfNumbers - 1));
 
-  for (let i = 0; i < countOfNumbers; i += 1) {
-    array.push(startNum + step * i);
-  }
+  const progression = getProgression(startNum, step, countOfNumbers);
+  const correctAnswer = progression[emptyIndex].toString();
 
-  const correctAnswer = array[place].toString();
-  array[place] = '..';
-  const question = array.join(' ');
+  progression[emptyIndex] = '..';
+  const question = progression.join(' ');
 
-  const game = { question, correctAnswer };
-  return game;
+  return { question, correctAnswer };
 };
 
 export default () => gameEngine(getGameObject, task);
