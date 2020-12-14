@@ -1,9 +1,9 @@
 import readlineSync from 'readline-sync';
-import runGreeting from './cli.js';
+import askUserName from './cli.js';
 
 const gameEngine = (getGameObject, rules) => {
   const countOfRounds = 3;
-  const userName = runGreeting();
+  const userName = askUserName();
   console.log(rules);
   for (let i = 0; i < countOfRounds; i += 1) {
     const { question, correctAnswer } = getGameObject();
