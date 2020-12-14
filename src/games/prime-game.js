@@ -17,7 +17,7 @@ const isPrime = (num) => {
 
 const getGameObject = () => {
   const number = getRandomNumFromRange(0, 200);
-  const correctAnswer = (isPrime(number)) ? primeCorrectAnswer : notPrimeCorrectAnswer;
+  const correctAnswer = isPrime(number) ? primeCorrectAnswer : notPrimeCorrectAnswer;
 
   return { question: number, correctAnswer };
 };
